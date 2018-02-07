@@ -29,6 +29,3 @@ $routeProvider
   .otherwise({redirectTo : '/'});
   $locationProvider.html5Mode(true);
 }])
-.service('RestaurantService', function(){
-  var cart =[];
-});

@@ -8,22 +8,11 @@
     </div>
     <div class="space"></div>
     <div class="row">
-      <div class="col-md-3 col-sm-6 service"> <i class="fa fa-desktop"></i>
-        <h4>Web Design</h4>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
+     <div class="col-md-3 col-sm-6 service" ng-repeat="service in services" >
+        <i class="{{service.image}}"></i>
+        <h4>{{service.name}}</h4>
+        <p>{{service.discription}}</p>
       </div>
-      <div class="col-md-3 col-sm-6 service"> <i class="fa fa-gears"></i>
-        <h4>App Development</h4>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque.</p>
       </div>
-      <div class="col-md-3 col-sm-6 service"> <i class="fa fa-rocket"></i>
-        <h4>Branding</h4>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
-      </div>
-      <div class="col-md-3 col-sm-6 service"> <i class="fa fa-line-chart"></i>
-        <h4>Marketing</h4>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque.</p>
-      </div>
-    </div>
   </div>
 </div>

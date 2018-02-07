@@ -3,7 +3,7 @@
 
 <!-- Header -->
     <header class="text-center" name="home">
-  <div class="intro-text">
+    <div class="intro-text">
     <h1>Welcome to <strong>Helios</strong></h1>
     <p>We are a full-service integrated creative agency</p>
     <a href="/services" class="btn btn-default btn-lg page-scroll">LEARN MORE</a> </div>
@@ -21,10 +21,10 @@
     </div>
     <div class="space"></div>
     <div class="row">
-      <div class="col-md-3 col-sm-6 service" ng-repeat="service in services " >
-        <!--<i class="{{service.image}}"></i>-->
-        <h4>{{service.name}}Web Design</h4>
-        <p>{{service.discription}}Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
+      <div class="col-md-3 col-sm-6 service" ng-repeat="service in services" >
+        <i class="{{service.image}}"></i>
+        <h4>{{service.name}}</h4>
+        <p>{{service.discription}}</p>
       </div>
      <!-- <div class="col-md-3 col-sm-6 service" ng-repeat="service in services track by $index"> <i class="fa fa-gears"></i>
         <h4>App Development</h4>
@@ -53,107 +53,38 @@
     <div class="categories">
       <ul class="cat">
         <li>
-          <ol class="type">
-            <li><a href="#" data-filter="*" class="active">All</a></li>
-            <li><a href="#" data-filter=".laptop">Laptop</a></li>
-            <li><a href="#" data-filter=".mobile">Mobile Phone</a></li>
-            <li><a href="#" data-filter=".fashion">fashion</a></li>
-            <li><a href="#" data-filter=".food">Foods</a></li>
-            <li><a href="#" data-filter=".book">Books</a></li>      
+           <ol class="type">
+            <li ng-class="(filter == 'all') ? 'active' : ''">
+              <a ng-click="filter ='all'" aria-expanded="true">All</a></li>
+            <li ng-class="(filter == 'laptop') ? 'active' : ''">
+              <a ng-click="filter = 'laptop'" aria-expanded="false">Laptop</a></li>
+            <li ng-class="(filter == 'mobile') ? 'active' : '' ">
+              <a ng-click="filter = 'mobile'" aria-expanded="false">Mobile Phone</a></li>
+            <li ng-class="(filter =='fashion') ? 'active' : ''">
+              <a ng-click="filter = 'fashion'" aria-expanded="false">fashion</a></li>
+            <li ng-class="(filter == 'food') ? 'active' : ''">
+              <a ng-click="filter = 'food'" aria-expanded="false">Foods</a></li>
+            <li ng-class="(filter == 'book') ? 'active' : ''">
+              <a ng-click="filter = 'book'" aria-expanded="false">Books</a></li>      
           </ol>
         </li>
       </ul>
      <div class="clearfix">
       </div>
     </div>
-    <div class="row">
+      <div class="row">
       <div class="portfolio-items">
-        <div class="col-sm-6 col-md-3 col-lg-3 laptop">
+        <div class="col-sm-6 col-md-3 col-lg-3" ng-repeat="item in items | filter:{type : filter} track by $index">
           <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/lap1.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Laptop</small>
+            <div class="hover-bg"> 
+              <img ng-src="{{item.image}}" alt="image" title="image" class="img-responsive"/>
+              <div class="hover-text"><a href="{{item.image}}" rel="prettyPhoto">
+                <h4>{{ item.title }}</h4>
+                <small>{{ item.category }}</small>
                 <div class="clearfix"></div>
               </div>
-              <img src="img/portfolio/lap1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 mobile">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/mob1.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Mobiles phones</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/mob1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 fashion">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/cloth1.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Cloths</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/cloth1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 laptop">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/lap2.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Laptop</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/lap2.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 mobile">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/mob2.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Mobiles Phones</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/mob2.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 food">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/food1.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Foods</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/food1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 book">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/book1.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Books</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/book1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 book">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/book2.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Project Title</h4>
-                <small>Books</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/book.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+             <img ng-src="{{item.image}}" class="img-responsive" alt="Project Title"/> </a> 
+            </div>
           </div>
         </div>
       </div>
@@ -229,7 +160,6 @@
           </div>
         </div>
       </div>
-     
     </div>
   </div>
 </div>
@@ -284,12 +214,6 @@
 </div>
 </div>
 
-
-  
-  <!-- Angular JS  --> 
-
-  
-  
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
