@@ -130,18 +130,7 @@ header p {
 	font-size: 20px;
 	margin-bottom: 80px;
 }
-/*header {
-	background: url(../img/headerTop-bg.jpg) no-repeat bottom right;
-	background-size: cover;
-	color: #cfcfcf;
-	position: relative;
-	height: 100%;
-}
-header p {
-	color: rgba(255,255,255,0.8);
-	font-size: 20px;
-	margin-bottom: 80px;
-}*/
+
 .intro-text {
 	position: relative;
 	padding-top: 250px;
